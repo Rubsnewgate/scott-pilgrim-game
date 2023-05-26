@@ -5,63 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scott Pilgrim's adventure | The Game</title>
-    <script>
-        //VARIABLES GLOBALES
-        let jugador = 0
-        let enemigo = 0
-        let triunfos = 0
-        let derrotas = 0
-        let empates = 0
-        //GENERANDO NÚMERO ALEATORIO PARA EL ATAQUE DEL ENEMIGO.
-        function numeroAleatorio (min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min)
-        }
-        //ELECCIÓN DE ATAQUE DEL JUGADOR Y EL ENEMIGO.
-        function elegiendoAtaque (jugada) {
-            let resultado = ""
-            if (jugada == 1) {
-                resultado = "piedra"
-            }
-            else if (jugada == 2) {
-                resultado = "papel"
-            }
-            else if (jugada == 3) {
-                resultado = "tijeras"
-            }
-            else {
-                resultado = "Error, elige un número entre el uno y el tres."
-            }
-            return resultado
-        }
-        //COMBATE
-        function combate() {
-            if (jugador == enemigo) {
-            alert("¡Empate!")
-            empates ++
-            }
-            else if (jugador == 1 && enemigo == 3 || jugador == 2 && enemigo == 1 || jugador == 3 && enemigo == 2) {
-              alert("¡Ganaste!")
-              triunfos ++
-            }
-            else {
-              alert("¡Perdiste!")
-              derrotas ++
-            }
-        }
-        //CICLO DE COMBATE
-        while (triunfos < 3 && derrotas < 3) {
-            enemigo = numeroAleatorio(1,3)
-            jugador = prompt("Elige: uno para piedra, dos para papel, tres para tijeras.")
-            //
-            alert("El enemigo eligió " + elegiendoAtaque(enemigo))
-            alert("El jugador eligió " + elegiendoAtaque(jugador))
-            //
-            combate()
-        }
-        alert("Ganaste " + triunfos + " veces," + " perdiste " + derrotas + " veces y" + " empataste " + empates + " veces.")
-    </script>
+    <script src="../js/scott.js"></script>
 </head>
 <body>
-    <h1>Piedra, papel o tijera.</h1>
+    <h1>Scott Pilgrim's Adventure 👾</h1>
+
+    <section id="seleccionar-peleador">
+        <h2>Elige a tu peleador</h2>
+
+        <input type="radio" name="peleador" id="scott">
+        <label for="scott">Scott Pilgrim</label>
+
+        <input type="radio" name="peleador" id="ramona">
+        <label for="ramona">Ramona Flowers</label>
+
+        <input type="radio" name="peleador" id="kim">
+        <label for="kim">Kim Pines</label>
+
+        <button id="btn-peleador">Seleccionar</button>
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque</h2>
+
+        <p>Tu peleador tiene <span>3</span> vidas</p>
+        <p>Tu peleador enemigo tiene <span>3</span> vidas</p>
+
+        <p>
+            <button id="btn-fisico">Fisico 🥊</button>  <!-- Fisico vence especial, magico a fisico, especial a magico-->
+            <button id="btn-magico">Magico ✨</button>
+            <button id="btn-especial">Especial 🔮</button>
+        </p>
+    </section>
+
+    <section id="mensajes">
+        <p>Tu peleador atacó con fuego, el peleador enemigo atacó con tierra -Ganaste!</p>
+    </section>
+
+    <section id="reset">
+        <button id="btn-reset">Reset</button>
+    </section>
+
 </body>
 </html>
