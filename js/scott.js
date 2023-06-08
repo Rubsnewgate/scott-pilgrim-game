@@ -29,7 +29,7 @@ function seleccionarPeleadorJugador() {
     seccionSeleccionarPeleador.style.display = 'none'
 
     let seccionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
-    seccionSeleccionarAtaque.style.display = 'block'
+    seccionSeleccionarAtaque.style.display = 'flex'
 
     let seleccion = document.getElementsByName('peleador')
     let spanPeleadorJugador = document.getElementById('peleador-jugador')
@@ -129,10 +129,23 @@ function contadorVidas() {
 }
 
 function indicadorVictoria(resultadoFinal) {
-    let sectionMensajes = document.getElementById('mensajes')
-    let ganadorOrPerdedor = document.createElement('p')
-    ganadorOrPerdedor.textContent = resultadoFinal
-    sectionMensajes.appendChild(ganadorOrPerdedor)
+    let sectionMensajes = document.getElementById('resultado')
+    let resultadoJugador = document.getElementById('resultado-jugador')
+    let resultadoEnemigo = document.getElementById('resultado-enemigo')
+
+    let nuevoAtaqueJugador = document.createElement('p')
+    let nuevoAtaqueEnemigo = document.createElement('p')
+
+    sectionMensajes.textContent = resultadoFinal
+    nuevoAtaqueJugador.textContent = ataqueJugador
+    nuevoAtaqueEnemigo.textContent = ataqueEnemigo
+
+    //let ganadorOrPerdedor = document.createElement('p')
+    //ganadorOrPerdedor.textContent = resultadoFinal
+
+    sectionMensajes.appendChild(resultado)
+    resultadoJugador.appendChild(nuevoAtaqueJugador)
+    resultadoEnemigo.appendChild(nuevoAtaqueEnemigo )
 
     let btnFisico = document.getElementById('btn-fisico')
     let btnMagico = document.getElementById('btn-magico')

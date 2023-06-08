@@ -5,50 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scott Pilgrim's adventure | The Game</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/scott.js"></script>
 </head>
 <body>
-    <h1>Scott Pilgrim's Adventure</h1>
-
+    <header>
+        <img src="" alt="">
+        <p>Scott Pilgrim's Adventure</p>
+    </header>
     <section id="seleccionar-peleador">
-        <h2>Elige a tu peleador</h2>
+        <h1 class="title">Scott Pilgrim's Adventure</h1>
 
-        <input type="radio" name="peleador" id="scott">
-        <label for="scott">Scott Pilgrim</label>
+        <h2 class="subtitle">Elige a tu peleador</h2>
 
-        <input type="radio" name="peleador" id="ramona">
-        <label for="ramona">Ramona Flowers</label>
+        <div class="cards">
+            <input type="radio" name="peleador" id="scott">
+            <label class="game-card" for="scott">
+                <p>Scott Pilgrim</p>
+                <img src="../assets/scott.gif" alt="scott pilgrim gif">
+            </label>
 
-        <input type="radio" name="peleador" id="kim">
-        <label for="kim">Kim Pines</label>
+            <input type="radio" name="peleador" id="ramona">
+            <label class="game-card" for="ramona">
+                <p>Ramona Flowers</p>
+                <img src="../assets/ramona.gif" alt="ramona flowers gif">
+            </label>
 
-        <button id="btn-peleador">Seleccionar</button>
+            <input type="radio" name="peleador" id="kim">
+            <label class="game-card" for="kim">
+                <p>Kim Pines</p>
+                <img src="../assets/kim.gif" alt="kim pines gif">
+            </label>
+        </div>
+
+        <button class="btn" id="btn-peleador">Seleccionar</button>
     </section>
 
     <section id="seleccionar-ataque">
-        <h2>Elige tu ataque</h2>
+        <h1 class="title">Scott Pilgrim's Adventure</h1>
 
-        <p>
-            <span id="peleador-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas.
-        </p>
+        <h2 class="subtitle">Elige tu ataque</h2>
 
-        <p>
-            <span id="peleador-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas.
-        </p>
+        <div>
+            <button class="btn" id="btn-fisico">Fisico 🥊</button>
+            <button class="btn" id="btn-magico">Magico ✨</button>
+            <button class="btn" id="btn-especial">Especial 🔮</button>
+        </div>
 
-        <p>
-            <!-- Fisico vence especial, magico a fisico, especial a magico-->
-            <button id="btn-fisico">Fisico 🥊</button>
-            <button id="btn-magico">Magico ✨</button>
-            <button id="btn-especial">Especial 🔮</button>
-        </p>
+        <div>
+
+            <section id="mensajes">
+                <p id="resultado"></p>
+            </section>
+
+            <section id="reset">
+                <button class="btn" id="btn-reset">Reset</button>
+            </section>
+
+            <div>
+                <div id="resultado-jugador"></div>
+                <div id="resultado-enemigo"></div>
+                <p><span id="peleador-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas.</p>
+                <p><span id="peleador-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas.</p>
+            </div>
+
+        </div>
     </section>
-
-    <section id="mensajes"></section>
-
-    <section id="reset">
-        <button id="btn-reset">Reset</button>
-    </section>
-
 </body>
 </html>
