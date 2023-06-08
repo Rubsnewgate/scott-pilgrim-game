@@ -1,0 +1,80 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #333;
+}
+
+input {
+    display: none;
+}
+
+.title {
+    color: #fff;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background-color: deeppink;
+}
+
+/* Estilos section elegir jugador */
+#seleccionar-peleador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.cards {
+    display: flex;
+    gap: 10px;
+}
+
+.game-card {
+    width: 180px;
+    height: 100px;
+    background: deeppink;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.game-card img {
+    width: 85px;
+    height: 85px;
+    border-radius: 100%;
+    margin: 0px 5px;
+}
+
+/* Estilos section elegir ataques */
+
+#seleccionar-ataque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
