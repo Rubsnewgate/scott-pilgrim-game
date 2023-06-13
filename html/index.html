@@ -9,39 +9,47 @@
     <script src="../js/scott.js"></script>
 </head>
 <body>
+    <!-- HEADER START -->
     <header>
-        <img src="" alt="">
-        <p>Scott Pilgrim's Adventure</p>
+        <div id="logo" class="image-container">
+            <img src="../assets/scott-icon.png" alt="web-icon">
+            <p>Scott Pilgrim's Adventure<p/>
+        </div>
     </header>
-    <section id="seleccionar-peleador">
+    <!-- HEADER END -->
+
+    <!-- FIGHTER SECTION START -->
+    <section id="section-select-peleador">
         <h1 class="title">Scott Pilgrim's Adventure</h1>
 
         <h2 class="subtitle">Elige a tu peleador</h2>
 
         <div class="cards">
-            <input type="radio" name="peleador" id="scott">
             <label class="game-card" for="scott">
                 <p>Scott Pilgrim</p>
                 <img src="../assets/scott.gif" alt="scott pilgrim gif">
             </label>
+            <input type="radio" name="peleador" id="scott">
 
-            <input type="radio" name="peleador" id="ramona">
             <label class="game-card" for="ramona">
                 <p>Ramona Flowers</p>
                 <img src="../assets/ramona.gif" alt="ramona flowers gif">
             </label>
+            <input type="radio" name="peleador" id="ramona">
 
-            <input type="radio" name="peleador" id="kim">
             <label class="game-card" for="kim">
                 <p>Kim Pines</p>
                 <img src="../assets/kim.gif" alt="kim pines gif">
             </label>
+            <input type="radio" name="peleador" id="kim">
         </div>
 
-        <button class="btn" id="btn-peleador">Seleccionar</button>
+        <button class="btn" id="btn-select-peleador">Seleccionar</button>
     </section>
+    <!-- FIGHTER SECTION END -->
 
-    <section id="seleccionar-ataque">
+    <!-- ATACK SECTION START -->
+    <section id="section-ataques">
         <h1 class="title">Scott Pilgrim's Adventure</h1>
 
         <h2 class="subtitle">Elige tu ataque</h2>
@@ -52,24 +60,21 @@
             <button class="btn" id="btn-especial">Especial 🔮</button>
         </div>
 
-        <div>
+        <div id="section-mensajes">
+            <p id="resultado">¡Que comience el combate!</p>
 
-            <section id="mensajes">
-                <p id="resultado"></p>
-            </section>
-
-            <section id="reset">
+            <section id="section-reset">
                 <button class="btn" id="btn-reset">Reset</button>
             </section>
+        </div>
 
-            <div>
-                <div id="resultado-jugador"></div>
-                <div id="resultado-enemigo"></div>
-                <p><span id="peleador-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas.</p>
-                <p><span id="peleador-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas.</p>
-            </div>
-
+        <div>
+            <div id="ataques-jugador"></div>
+            <div id="ataques-enemigo"></div>
+            <p><span id="peleador-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas.</p>
+            <p><span id="peleador-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas.</p>
         </div>
     </section>
+    <!-- ATACK SECTION END -->
 </body>
 </html>
