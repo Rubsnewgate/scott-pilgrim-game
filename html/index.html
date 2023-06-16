@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scott Pilgrim's adventure | The Game</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/scott.js"></script>
 </head>
 <body>
     <!-- HEADER START -->
@@ -25,23 +24,23 @@
         <h2 class="subtitle">Elige a tu peleador</h2>
 
         <div class="cards">
+            <input type="radio" name="peleador" id="scott">
             <label class="game-card" for="scott">
                 <p>Scott Pilgrim</p>
                 <img src="../assets/scott.gif" alt="scott pilgrim gif">
             </label>
-            <input type="radio" name="peleador" id="scott">
 
+            <input type="radio" name="peleador" id="ramona">
             <label class="game-card" for="ramona">
                 <p>Ramona Flowers</p>
                 <img src="../assets/ramona.gif" alt="ramona flowers gif">
             </label>
-            <input type="radio" name="peleador" id="ramona">
 
+            <input type="radio" name="peleador" id="kim">
             <label class="game-card" for="kim">
                 <p>Kim Pines</p>
                 <img src="../assets/kim.gif" alt="kim pines gif">
             </label>
-            <input type="radio" name="peleador" id="kim">
         </div>
 
         <button class="btn" id="btn-select-peleador">Seleccionar</button>
@@ -54,7 +53,7 @@
 
         <h2 class="subtitle">Elige tu ataque</h2>
 
-        <div>
+        <div class="btns-ataque">
             <button class="btn" id="btn-fisico">Fisico 🥊</button>
             <button class="btn" id="btn-magico">Magico ✨</button>
             <button class="btn" id="btn-especial">Especial 🔮</button>
@@ -68,13 +67,21 @@
             </section>
         </div>
 
-        <div>
-            <div id="ataques-jugador"></div>
-            <div id="ataques-enemigo"></div>
-            <p><span id="peleador-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas.</p>
-            <p><span id="peleador-enemigo"></span> tiene <span id="vidas-enemigo">3</span> vidas.</p>
+        <div class="counter-container">
+            <div>
+                <p id="peleador-jugador"></p>
+                <p id="vidas-jugador">3</p>
+                <div id="ataques-jugador"></div>
+            </div>
+
+            <div>
+                <p id="peleador-enemigo"></p>
+                <p id="vidas-enemigo">3</p>
+                <div id="ataques-enemigo"></div>
+            </div>
         </div>
     </section>
     <!-- ATACK SECTION END -->
+    <script src="../js/scott.js"></script>
 </body>
 </html>

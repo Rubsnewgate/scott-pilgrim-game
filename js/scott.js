@@ -4,23 +4,54 @@ let ataqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+//LLAMANDO AL HTML MEDIANTE UN ID
+const sectionAtaques = document.getElementById('section-ataques')
+const sectionReset = document.getElementById('section-reset')
+const btnReset = document.getElementById('btn-reset')
+const selectPeleador = document.getElementById('btn-select-peleador')
+const btnFisico = document.getElementById('btn-fisico')
+const btnMagico = document.getElementById('btn-magico')
+const btnEspecial = document.getElementById('btn-especial')
+
+const seccionSeleccionarPeleador = document.getElementById('section-select-peleador')
+const seccionSeleccionarAtaque = document.getElementById('section-ataques')
+const scottCard = document.getElementById('scott')
+const ramonaCard = document.getElementById('ramona')
+const kimCard = document.getElementById('kim')
+const spanPeleadorJugador = document.getElementById('peleador-jugador')
+const spanPeleadorEnemigo = document.getElementById('peleador-enemigo')
+
+const spanVidasJugador = document.getElementById('vidas-jugador')
+const spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
+const sectionMensajes = document.getElementById('resultado')
+const divAtaquesJugador = document.getElementById('ataques-jugador')
+const divAtaquesEnemigo = document.getElementById('ataques-enemigo')
+
+//CLASE (PROGRAMACIÓN ORIENTADA A OBJETOS)
+class Peleador {
+    constructor(nombre, foto, vida) {
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+    }
+}
+
+//OBJETOS
+let scott = new Peleador('Scott', '../assets/scott.gif', 3)
+let ramona = new Peleador('Ramona', '../assets/ramona.gif', 3)
+let kim = new Peleador('Kim', '../assets/kim.gif', 3)
+
 // START GAME
 function iniciarJuego() {
-    let sectionAtaques = document.getElementById('section-ataques')
     sectionAtaques.style.display = 'none'
 
-    let sectionReset = document.getElementById('section-reset')
     sectionReset.style.display = 'none'
 
-    let btnReset = document.getElementById('btn-reset')
     btnReset.addEventListener('click', resetJuego)
 
-    let selectPeleador = document.getElementById('btn-select-peleador')
     selectPeleador.addEventListener('click', seleccionarPeleadorJugador)
 
-    let btnFisico = document.getElementById('btn-fisico')
-    let btnMagico = document.getElementById('btn-magico')
-    let btnEspecial = document.getElementById('btn-especial')
     btnFisico.addEventListener('click',ataqueFisico)
     btnMagico.addEventListener('click', ataqueMagico)
     btnEspecial.addEventListener('click', ataqueEspecial)
@@ -28,24 +59,17 @@ function iniciarJuego() {
 
 // DINAMICA DE ELECCION DE PELEADOR
 function seleccionarPeleadorJugador() {
-    let seccionSeleccionarPeleador = document.getElementById('section-select-peleador')
     seccionSeleccionarPeleador.style.display = 'none'
 
-    let seccionSeleccionarAtaque = document.getElementById('section-ataques')
     seccionSeleccionarAtaque.style.display = 'flex'
 
-    let scott = document.getElementById('scott')
-    let ramona = document.getElementById('ramona')
-    let kim = document.getElementById('kim')
-    let spanPeleadorJugador = document.getElementById('peleador-jugador')
-
-    if (scott.checked) {
+    if (scottCard.checked) {
         spanPeleadorJugador.textContent = 'Scott Pilgrim'
     }
-    else if (ramona.checked) {
+    else if (ramonaCard.checked) {
         spanPeleadorJugador.textContent = 'Ramona Flowers'
     }
-    else if (kim.checked) {
+    else if (kimCard.checked) {
         spanPeleadorJugador.textContent = 'Kim Pines'
     }
     else {
@@ -57,7 +81,7 @@ function seleccionarPeleadorJugador() {
 
 function seleccionarPeleadorEnemigo() {
     let peleadorAleatorio = numeroAleatorio(1, 3)
-    let spanPeleadorEnemigo = document.getElementById('peleador-enemigo')
+
     if (peleadorAleatorio == 1) {
         spanPeleadorEnemigo.textContent = 'Scott Pilgrim'
     }
@@ -100,8 +124,6 @@ function seleccionAtaqueEnemigo() {
 
 //MECANICA DE COMBATE
 function combate() {
-    let spanVidasJugador = document.getElementById('vidas-jugador')
-    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
 
     if (ataqueJugador == 'Fisico' && ataqueEnemigo == 'Especial' || ataqueJugador == 'Magico' && ataqueEnemigo == 'Fisico' || ataqueJugador == 'Especial' && ataqueEnemigo == 'Magico') {
         crearMensaje('¡Has Ganado!')
@@ -130,9 +152,6 @@ function contadorVidas() {
 
 //ATAQUES USADOS E INDICADOR DE GANADOR
 function crearMensaje(resultado) {
-    let sectionMensajes = document.getElementById('resultado')
-    let divAtaquesJugador = document.getElementById('ataques-jugador')
-    let divAtaquesEnemigo = document.getElementById('ataques-enemigo')
 
     let nuevoAtaqueJugador = document.createElement('p')
     let nuevoAtaqueEnemigo = document.createElement('p')
@@ -146,20 +165,16 @@ function crearMensaje(resultado) {
 }
 
 function indicadorVictoria(resultadoFinal) {
-    let sectionMensajes = document.getElementById('resultado')
 
     sectionMensajes.textContent = resultadoFinal
 
-    let btnFisico = document.getElementById('btn-fisico')
     btnFisico.disabled = true
-    let btnMagico = document.getElementById('btn-magico')
     btnMagico.disabled = true
-    let btnEspecial = document.getElementById('btn-especial')
     btnEspecial.disabled = true
 
-    let sectionReset = document.getElementById('section-reset')
     sectionReset.style.display = 'block'
 }
+
 // RESET GAME
 function resetJuego() {
     location.reload()

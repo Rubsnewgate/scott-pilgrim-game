@@ -20,6 +20,10 @@ label:hover {
     cursor: pointer;
 }
 
+input:checked + label {
+    background-color: crimson;
+}
+
 .title {
     color: #fff;
     font-size: 32px;
@@ -48,9 +52,9 @@ label:hover {
 
 /* ESTILOS DEL HEADER */
 header {
-    width: 100vw;
+    width: 100%;
     background: #1f1f1f;
-    padding: 10px 50px;
+    padding: 10px 20px;
 }
 
 .image-container {
@@ -59,12 +63,15 @@ header {
     color: #fff;
 }
 
+.image-container p {
+    margin-left: 10px;
+}
+
 #logo img {
     width: 50px;
     height: 50px;
-    margin-right: 50px;
     border-radius: 100%;
-    border: 2px solid deeppink;
+    border: 2px solid #fff;
 }
 
 /* ESTILOS SECTION SELECT PELEADOR */
@@ -75,7 +82,7 @@ header {
     align-items: center;
 }
 
-.cards {
+.cards, .btns-ataque {
     display: flex;
     gap: 15px;
 }
@@ -133,4 +140,28 @@ header {
 
 #btn-reset {
     background: #333;
+}
+
+.counter-container {
+    display: grid;
+    grid-template-columns: 140px 140px;
+    text-align: center;
+    justify-content: center;
+    color: white
+}
+
+#vidas-jugador, #vidas-enemigo {
+    font-size: 32px;
+    margin: 5px 0;
+}
+
+@media (max-width: 540px) {
+    .cards, .btns-ataque {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        text-align: center;
+    }
 }
