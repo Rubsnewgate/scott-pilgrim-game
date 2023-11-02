@@ -2,86 +2,108 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scott pilgrim's adventure game">
+    <meta name="robots" content="index, follow">
     <title>Scott Pilgrim's adventure | The Game</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <!-- HEADER START -->
-    <header>
-        <div id="logo" class="image-container">
-            <img src="../assets/scott-icon.png" alt="web-icon">
-            <p>Scott Pilgrim's Adventure<p/>
+    <header class="header">
+        <div id="logo" class="header__logo">
+            <img class="header__logo--icon"
+            src="../assets/icon/scott-icon.png"
+            alt="scott pilgrim's adventure icon"
+            >
+            <p class="header__logo--text">
+                Scott Pilgrim's Adventure
+            </p>
         </div>
     </header>
-    <!-- HEADER END -->
 
-    <!-- FIGHTER SECTION START -->
-    <section id="section-select-peleador">
-        <h1 class="title">Scott Pilgrim's Adventure</h1>
+    <!-- Select fighter section -->
+    <section class="select-fighter">
+        <h1 class="select-fighter__title title">
+            Scott Pilgrim's Adventure
+        </h1>
 
-        <h2 class="subtitle">Elige a tu peleador</h2>
+        <h2 class="select-fighter__subtitle subtitle">
+            Choose your fighter!
+        </h2>
 
-        <div class="cards">
-            <input type="radio" name="peleador" id="scott">
-            <label class="game-card" for="scott">
-                <p>Scott Pilgrim</p>
-                <img src="../assets/scott.gif" alt="scott pilgrim gif">
-            </label>
-
-            <input type="radio" name="peleador" id="ramona">
-            <label class="game-card" for="ramona">
-                <p>Ramona Flowers</p>
-                <img src="../assets/ramona.gif" alt="ramona flowers gif">
-            </label>
-
-            <input type="radio" name="peleador" id="kim">
-            <label class="game-card" for="kim">
-                <p>Kim Pines</p>
-                <img src="../assets/kim.gif" alt="kim pines gif">
-            </label>
+        <div class="select-fighter__cards">
         </div>
 
-        <button class="btn" id="btn-select-peleador">Seleccionar</button>
+        <button class="btn select-fighter__btn">
+            Select
+        </button>
     </section>
-    <!-- FIGHTER SECTION END -->
 
-    <!-- ATACK SECTION START -->
-    <section id="section-ataques">
-        <h1 class="title">Scott Pilgrim's Adventure</h1>
+    <!-- Canvas section -->
+    <section class="game-canvas">
+        <h1 class="game-canvas__title title">
+            Scott Pilgrim's Adventure
+        </h1>
+        <h2 class="game-canvas__subtitle subtitle">
+            Face your enemy!
+        </h2>
+        <canvas class="game-canvas__map"></canvas>
 
-        <h2 class="subtitle">Elige tu ataque</h2>
-
-        <div class="btns-ataque">
-            <button class="btn" id="btn-fisico">Fisico 🥊</button>
-            <button class="btn" id="btn-magico">Magico ✨</button>
-            <button class="btn" id="btn-especial">Especial 🔮</button>
-        </div>
-
-        <div id="section-mensajes">
-            <p id="resultado">¡Que comience el combate!</p>
-
-            <section id="section-reset">
-                <button class="btn" id="btn-reset">Reset</button>
-            </section>
-        </div>
-
-        <div class="counter-container">
-            <div>
-                <p id="peleador-jugador"></p>
-                <p id="vidas-jugador">3</p>
-                <div id="ataques-jugador"></div>
-            </div>
-
-            <div>
-                <p id="peleador-enemigo"></p>
-                <p id="vidas-enemigo">3</p>
-                <div id="ataques-enemigo"></div>
-            </div>
+        <!-- onclick -->
+        <button class="btn movement__btn" onmouseup="stopMovement()" onmousedown="moveFighterUp()">Up</button>
+        <div class="canvas__btns">
+            <button class="btn movement__btn" onmouseup="stopMovement()" onmousedown="moveFighterRight()">Right</button>
+            <button class="btn movement__btn" onmouseup="stopMovement()" onmousedown="moveFighterDown()">Down</button>
+            <button class="btn movement__btn" onmouseup="stopMovement()" onmousedown="moveFighterLeft()">Left</button>
         </div>
     </section>
-    <!-- ATACK SECTION END -->
+
+    <!-- Select attacks section -->
+    <section class="select-attacks">
+        <h1 class="select-attacks__title title">
+            Scott Pilgrim's Adventure
+        </h1>
+
+        <h2 class="select-attacks__subtitle subtitle">
+            Choose your attack!
+        </h2>
+
+        <div class="select-attacks__container btns-ataque">
+        </div>
+
+        <div class="select-attacks__messages">
+            <p class="select-attacks__resultado">
+                ¡Ready, Go!
+            </p>
+
+            <div class="select-attacks__reset">
+                <button class="btn select-attacks__reset--btn">
+                    Reset
+                </button>
+            </div>
+        </div>
+
+        <div class="select-attacks__counter">
+            <div class="counter__wrapper">
+                <div class="counter__img--player1">
+                    <img class="thumbnail--player1" src="" alt="player icon">
+                </div>
+                <p class="counter__victories--player1">0</p>
+                <p class="counter__name--player1"></p>
+                <div class="counter__attacks--player1"></div>
+            </div>
+
+            <div class="counter__wrapper">
+                <div class="counter__img--player2">
+                    <img class="thumbnail--player2" src="" alt="player icon">
+                </div>
+                <p class="counter__victories--player2">0</p>
+                <p class="counter__name--player2"></p>
+                <div class="counter__attacks--player2"></div>
+            </div>
+        </div>
+    </section>
+
     <script src="../js/scott.js"></script>
 </body>
 </html>

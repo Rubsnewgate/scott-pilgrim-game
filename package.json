@@ -1,0 +1,23 @@
+{
+  "name": "mokepon-project",
+  "version": "1.0.0",
+  "description": "Basic game project using html, css, javascript and node.js for the backend utilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rubsnewgate/scott-pilgrim-game.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "author": "RubsNewgate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rubsnewgate/scott-pilgrim-game/issues"
+  },
+  "homepage": "https://github.com/Rubsnewgate/scott-pilgrim-game#readme"
+}
