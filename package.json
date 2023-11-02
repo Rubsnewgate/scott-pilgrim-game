@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Rubsnewgate/scott-pilgrim-game/issues"
   },
-  "homepage": "https://github.com/Rubsnewgate/scott-pilgrim-game#readme"
+  "homepage": "https://github.com/Rubsnewgate/scott-pilgrim-game#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
