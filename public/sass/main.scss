@@ -1,0 +1,142 @@
+@import './guide_styles.scss';
+
+// HEADER STYLES
+.header {
+	padding: 10px 20px;
+	background-color: $very-dark-gray;
+}
+.header__logo {
+	@include flexbox(null, null, center, null);
+	color: $white;
+}
+.header__logo--icon {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	border: 3px solid $white;
+}
+.header__logo--text {
+	font-size: $md-size;
+	margin-left: 10px;
+}
+
+// CHOOSE YOUR FIGHTER SECTION STYLES
+.select-fighter {
+	@include flexbox(column, center, center, null);
+}
+.select-fighter__cards {
+	@include grid(repeat(3, 1fr), null, 15px);
+}
+.select-fighter__cards--info {
+	@include flexbox(column, center, center, 5px);
+	width: 200px;
+	height: 120px;
+	padding: 10px;
+	color: $white;
+	background-color: $deep-pink;
+	border-radius: 10px;
+	transition: transform 600ms;
+	img {
+		width: 85px;
+		height: 85px;
+		border-radius: 100%;
+		margin: 0 5px;
+	}
+}
+.select-fighter__cards--info:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+// GAME MAP SECTION STYLES
+.game-canvas {
+	@include flexbox(column, center, center, null)
+}
+.game-canvas__map {
+	border: 3px solid $crimson;
+	border-radius: 10px;
+}
+
+// CHOOSE YOUR ATTACKS SECTION STYLES
+.select-attacks {
+	@include flexbox(column, null, center, null)
+}
+.select-attacks__messages {
+	@include flexbox(column, null, center, null);
+	margin: 0 0 30px 0;
+	padding: 20px;
+	text-align: center;
+	color: $white;
+	background-color: $deep-pink;
+	border-radius: 10px;
+}
+.select-attacks__counter {
+	@include grid(140px 140px, null, null);
+	justify-content: center;
+	margin-bottom: 20px;
+	text-align: center;
+	color: $white;
+}
+.counter__img--player1, .counter__img--player2 {
+	img {
+		width: 85px;
+		height: 85px;
+		margin: 0 5px;
+		border-radius: 100%;
+	}
+}
+.counter__lives--player1, .counter__lives--player2 {
+	font-size: $lg-size;
+	margin: 5px 0;
+}
+
+// WINNER INDICATOR STYLES
+.counter__wrapper {
+	@include flexbox(column, null, null, 5px)
+}
+.counter__attacks--player1, .counter__attacks--player2 {
+	p {
+		margin-bottom: 5px;
+	}
+}
+
+// TYPOGRAPHY STYLES
+.title {
+	margin: 30px 0 0 0;
+	font-size: $lg-size;
+	color: $white;
+}
+.subtitle {
+	margin: 30px 0;
+	font-size: $md-size;
+	color: $white;
+}
+
+// BTNS STYLES
+.btn {
+	margin: 20px 10px;
+	width: 120px;
+	height: 40px;
+	color: $white;
+	background-color: $deep-pink;
+	border: none;
+	border-radius: 10px;
+	transition: transform 600ms;
+}
+.btn:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+.movement__btn {
+	width: 80px;
+	margin: 10px;
+}
+.btns-ataque {
+	@include flexbox(null, null, null, 15px)
+}
+#btn-fisico, #btn-especial, #btn-magico {
+	margin: 0 0 30px 0;
+}
+.select-attacks__reset--btn {
+	background-color: $dark-gray;
+}

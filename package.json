@@ -1,7 +1,7 @@
 {
-  "name": "mokepon-project",
+  "name": "scott-project",
   "version": "1.0.0",
-  "description": "Basic game project using html, css, javascript and node.js for the backend utilities.",
+  "description": "Basic game project using html, sass, javascript and node.js for the backend utilities.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Rubsnewgate/scott-pilgrim-game#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2"
   }
 }

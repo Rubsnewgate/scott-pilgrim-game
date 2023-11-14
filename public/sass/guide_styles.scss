@@ -1,0 +1,48 @@
+// COLORS
+$dark-gray: #333333;
+$very-dark-gray: #1f1f1f;
+$crimson: #dc143c;
+$deep-pink: #ff1493;
+$white: #ffffff;
+
+// TYPOGRAPHY
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+$primary-font: 'Roboto', sans-serif;
+$lg-size: 32px;
+$md-size: 24px;
+
+// GENERAL RESETS
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: $primary-font;
+	background-color: $dark-gray;
+}
+input {
+	display: none;
+}
+label:hover {
+	cursor: pointer;
+}
+input:checked + label {
+	background-color: $crimson;
+}
+
+// FLEXBOX MACHINE
+@mixin flexbox($direction:null, $content:null, $items:null, $gap:null) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $content;
+	align-items: $items;
+	gap: $gap;
+}
+// GRID MACHINE
+@mixin grid($columns:null, $rows:null, $gap:null) {
+	display: grid;
+	grid-template-columns: $columns;
+	grid-template-rows: $rows;
+	gap: $gap;
+}

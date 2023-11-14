@@ -1,0 +1,30 @@
+@import './guide_styles.scss';
+
+.cards {
+	@include flexbox(column, null,  null, null);
+}
+.select-fighter__cards {
+	@include grid(1fr, null, null);
+}
+.select-attacks__messages {
+	margin-top: 20px;
+}
+
+.game-canvas__map {
+	width: 300px;
+	height: 180px;
+}
+
+.btn {
+	margin: 20px 0;
+}
+.btns-ataque {
+	@include grid(repeat(2, 1fr), null, null);
+}
+#btn-fisico, #btn-magico, #btn-especial {
+	margin: 0;
+}
+
+.title {
+	text-align: center;
+}

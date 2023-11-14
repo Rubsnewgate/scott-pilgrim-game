@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #333333;
+}
+
+input {
+  display: none;
+}
+
+label:hover {
+  cursor: pointer;
+}
+
+input:checked + label {
+  background-color: #dc143c;
+}
+
+.header {
+  padding: 10px 20px;
+  background-color: #1f1f1f;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.header__logo--icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 3px solid #ffffff;
+}
+
+.header__logo--text {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.select-fighter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-fighter__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.select-fighter__cards--info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 200px;
+  height: 120px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #ff1493;
+  border-radius: 10px;
+  transition: transform 600ms;
+}
+.select-fighter__cards--info img {
+  width: 85px;
+  height: 85px;
+  border-radius: 100%;
+  margin: 0 5px;
+}
+
+.select-fighter__cards--info:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.game-canvas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-canvas__map {
+  border: 3px solid #dc143c;
+  border-radius: 10px;
+}
+
+.select-attacks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-attacks__messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 30px 0;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ff1493;
+  border-radius: 10px;
+}
+
+.select-attacks__counter {
+  display: grid;
+  grid-template-columns: 140px 140px;
+  justify-content: center;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.counter__img--player1 img, .counter__img--player2 img {
+  width: 85px;
+  height: 85px;
+  margin: 0 5px;
+  border-radius: 100%;
+}
+
+.counter__lives--player1, .counter__lives--player2 {
+  font-size: 32px;
+  margin: 5px 0;
+}
+
+.counter__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.counter__attacks--player1 p, .counter__attacks--player2 p {
+  margin-bottom: 5px;
+}
+
+.title {
+  margin: 30px 0 0 0;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.subtitle {
+  margin: 30px 0;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.btn {
+  margin: 20px 10px;
+  width: 120px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #ff1493;
+  border: none;
+  border-radius: 10px;
+  transition: transform 600ms;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.movement__btn {
+  width: 80px;
+  margin: 10px;
+}
+
+.btns-ataque {
+  display: flex;
+  gap: 15px;
+}
+
+#btn-fisico, #btn-especial, #btn-magico {
+  margin: 0 0 30px 0;
+}
+
+.select-attacks__reset--btn {
+  background-color: #333333;
+}
+
+/*# sourceMappingURL=main.css.map */
